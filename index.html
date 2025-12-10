@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RIA Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terracotta:#bc7364;
+  --cream:#ddc38e;
+  --page-bg:#f6f1eb;
+  --text:#2e3a4a;
+  --muted:#80889a;
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,system-ui, -apple-system, sans-serif;background:var(--page-bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+.header-hero{background:var(--terracotta);padding:100px 20px 120px;text-align:center;color:var(--page-bg);}
+.header-hero img{width:260px;max-width:70%;height:auto;display:block;margin:0 auto 18px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.14));}
+.header-hero h1{font-family:'Playfair Display',serif;font-size:40px;color:var(--cream);margin:0 0 8px;}
+.header-hero p.lead{color:var(--page-bg);margin:0 0 22px;font-weight:600;}
+.btn-cta{background:var(--cream);color:var(--text);padding:14px 30px;border-radius:999px;display:inline-block;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.08);}
+
+/* sections */
+.container{max-width:1100px;margin:48px auto;padding:0 20px;}
+.section-title{text-align:center;font-size:32px;color:var(--text);margin-bottom:26px;font-weight:700;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.card{background:var(--white);padding:26px;border-radius:16px;box-shadow:0 12px 40px rgba(16,24,40,0.06);}
+.price-badge{background:var(--terracotta);color:var(--white);padding:10px 18px;border-radius:14px;font-weight:700;display:inline-block;margin-top:14px;}
+
+/* testimonials - desktop: 3 visible cards */
+.testimonials-wrap{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;align-items:stretch;max-width:1100px;margin:0 auto;}
+.test-card{background:var(--white);padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(16,24,40,0.06);width:320px;flex:0 0 auto;}
+.test-card p{margin:0 0 12px;line-height:1.6;color:var(--text);}
+.test-card strong{color:var(--text);display:block;margin-top:6px;font-weight:700;}
+
+/* small screens: make carousel behavior */
+@media(max-width:760px){
+  .testimonials-wrap{overflow:hidden;scroll-snap-type:x mandatory;display:flex;padding-bottom:14px;}
+  .test-card{min-width:80%;scroll-snap-align:center;margin:0 8px;}
+}
+
+/* contact */
+form{max-width:720px;margin:18px auto 40px;background:var(--white);padding:22px;border-radius:14px;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--muted);margin-bottom:12px;font-size:15px}
+.btn-submit{background:var(--terracotta);color:var(--white);padding:12px 18px;border-radius:10px;border:none;font-weight:700;width:100%;cursor:pointer;}
+
+/* hero animations (subtle) */
+.fade-in {opacity:0; transform:translateY(12px); animation:fadeIn 1s forwards;}
+.fade-in-200 {animation-delay:0.2s;}
+.fade-in-400 {animation-delay:0.4s;}
+@keyframes fadeIn {to{opacity:1; transform:none;}}
+
+/* whatsapp button */
+#whatsapp-btn{position:fixed;right:20px;bottom:20px;background:var(--terracotta);color:white;padding:14px 18px;border-radius:40px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,0.12);z-index:999}
+#whatsapp-btn:hover{transform:scale(1.03);transition:transform .15s ease;}
+
+/* small adjustments */
+h2.section-title{font-size:36px;margin-bottom:30px}
+</style>
+</head>
+<body>
+
+<header class="header-hero" role="banner">
+  <img src="assets/logo.png" alt="RIA Studio Logo" class="fade-in fade-in-200">
+  <h1 class="fade-in fade-in-400">Afaceri mici. Rezultate mari. Fără risipă.</h1>
+  <p class="lead fade-in fade-in-400">Marketing fără risipă pentru afaceri mici care vor rezultate reale</p>
+  <a class="btn-cta fade-in fade-in-400" href="#contact">Solicită o discuție</a>
+</header>
+
+<main>
+  <section class="container" id="about">
+    <h2 class="section-title">Despre mine</h2>
+    <p style="max-width:900px;margin:0 auto;text-align:center;line-height:1.7;">Sunt Rebecca, fondatoarea RIA Studio. Lucrez cu afaceri mici — grădinițe, saloane, clinici — care vor vizibilitate reală, dar nu au timp sau buget pentru experimente riscante. Pun bazele: Google My Business, mesaje clare și conținut organic — apoi scalez cu reclame inteligente.</p>
+  </section>
+
+  <section class="container" id="services">
+    <h2 class="section-title">Servicii</h2>
+    <div class="cards">
+      <div class="card"><h3>Google My Business</h3><p>Optimizare completă — descriere, postări, imagini și monitorizare.</p></div>
+      <div class="card"><h3>Social Media</h3><p>Postări lunare, șabloane Canva și creare de comunitate locală.</p></div>
+      <div class="card"><h3>Identitate & Mesaj</h3><p>Poziționare, mesaje și ghid vizual pentru comunicare clară.</p></div>
+      <div class="card"><h3>Reclame & Setup</h3><p>Setare campanii + setup inițial (detalii mai jos).</p></div>
+    </div>
+  </section>
+
+  <section class="container" id="packages">
+    <h2 class="section-title">Pachete</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 style="color:var(--terracotta)">Pachet Start</h3>
+        <ul style="padding-left:18px;line-height:1.7">
+          <li>GMB optimizat</li>
+          <li>4 postări / lună</li>
+          <li>Șablon Canva</li>
+          <li>Audit + recomandări</li>
+        </ul>
+        <div class="price-badge">800 lei</div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--terracotta)">Pachet Vizibil</h3>
+        <ul style="padding-left:18px;line-height:1.7">
+          <li>GMB + postări</li>
+          <li>8 postări / lună</li>
+          <li>3 șabloane Canva</li>
+          <li>Mini-strategie lunară + raport</li>
+        </ul>
+        <div class="price-badge">1200 lei</div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--terracotta)">Pachet Complet</h3>
+        <ul style="padding-left:18px;line-height:1.7">
+          <li>GMB complet + monitorizare</li>
+          <li>12 postări / lună</li>
+          <li>Ghid foto</li>
+          <li>Consultanță lunară + suport</li>
+        </ul>
+        <div class="price-badge">1800 lei</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reclame & Setup (keep only under packages) -->
+  <section id="ads-setup" class="container" style="margin-top:40px;margin-bottom:40px;">
+    <h2 class="section-title">Reclame & Setup</h2>
+    <div style="background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(16,24,40,0.06);">
+      <h3 style="color:var(--terracotta)">Setup inițial — 300–400 lei</h3>
+      <p>Setupul include: creare/optimizare cont Facebook Business, Google Business Profile, instalare Pixel/Tracking, configurări de bază și accesuri. <strong>Gratuit la abonament 3 luni.</strong></p>
+      <h4 style="margin-top:14px;color:var(--terracotta)">Reclame</h4>
+      <p>Gestionarea campaniilor este personalizată; prețul se stabilește după analiză.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials: show three cards on desktop, carousel behavior on small screens -->
+  <section id="testimonials" class="container" style="padding-top:40px;padding-bottom:40px;">
+    <h2 class="section-title">Testimoniale</h2>
+    <div class="testimonials-wrap" id="testimonials-wrap">
+      <div class="test-card"><p>"Rebecca mi-a pus totul în ordine — acum primim clienți din Google lunar."</p><strong>— Ioana, Salon</strong></div>
+      <div class="test-card"><p>"După optimizare, înscrierile la grădiniță au crescut fără reclame."</p><strong>— Andreea, Grădiniță</strong></div>
+      <div class="test-card"><p>"Explicații simple, implementare rapidă. Recomand!"</p><strong>— Dr. Marius</strong></div>
+    </div>
+  </section>
+
+  <section id="contact" class="container" style="padding-bottom:80px;">
+    <h2 class="section-title">Contact</h2>
+    <form action="https://formsubmit.co/rebeccairimiam@gmail.com" method="POST">
+      <input name="name" placeholder="Nume complet" required/>
+      <input name="email" type="email" placeholder="Email" required/>
+      <textarea name="message" rows="5" placeholder="Spune-mi pe scurt despre afacerea ta"></textarea>
+      <button class="btn-submit" type="submit">Trimite mesaj</button>
+    </form>
+  </section>
+</main>
+
+<!-- WhatsApp button -->
+<a id="whatsapp-btn" href="https://wa.me/40764980498" target="_blank" rel="noopener">WhatsApp</a>
+
+<footer style="padding:40px 20px;text-align:center;color:var(--muted)">© RIA Studio — Marketing fără risipă</footer>
+
+<!-- JS: testimonials slider + small animations (no color changes) -->
+<script>
+(function(){
+  const wrap = document.getElementById('testimonials-wrap');
+  if(!wrap) return;
+  // auto-scroll on small devices
+  let mq = window.matchMedia('(max-width:760px)');
+  let interval;
+  function start(){
+    if(!mq.matches) return;
+    let pos = 0;
+    interval = setInterval(()=>{
+      pos += wrap.offsetWidth * 0.82;
+      if(pos > wrap.scrollWidth - wrap.offsetWidth) pos = 0;
+      wrap.scrollTo({ left: pos, behavior: 'smooth' });
+    }, 3800);
+  }
+  function stop(){
+    if(interval) clearInterval(interval);
+  }
+  start();
+  window.addEventListener('resize', ()=>{ stop(); start(); });
+})();
+</script>
+</body>
+</html>
